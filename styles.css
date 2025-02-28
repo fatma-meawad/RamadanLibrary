@@ -9,10 +9,11 @@ body {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Adjust dynamically */
     gap: 20px;
     max-width: 900px;
     margin: auto;
+    align-items: stretch;
+    /* Ensures all cards stretch to match tallest one */
 }
 
 /* Card Styling */
@@ -22,46 +23,47 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: right;
-    padding-bottom: 10px;
     width: 420px;
-    /* More balanced width */
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    /* Allows the card to expand */
 }
 
+/* Ensuring image consistency */
 .card img {
     width: 100%;
     height: 150px;
-    /* Balanced image size */
     object-fit: cover;
 }
 
+/* Content inside the card */
 .card-content {
+    flex-grow: 1;
     padding: 10px;
 }
 
-.card h2 {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
+/* Ensure all text is fully visible */
 .card p {
     font-size: 13px;
     color: #444;
-    /* Darker text for readability */
+    white-space: normal;
+    /* Allow wrapping */
 }
 
-/* Footer with evenly spaced links */
+/* Card Footer: Spaced-out Links */
 .card-footer {
     display: flex;
     justify-content: space-between;
-    /* Spread links evenly */
     padding: 8px 12px;
-    /* Proper spacing */
     font-size: 14px;
     border-top: 1px solid #ddd;
-    /* Subtle separator */
 }
 
+
+/* Clickable links */
 .clickable {
     font-weight: bold;
 }
@@ -79,7 +81,6 @@ body {
 
 .report a {
     color: #e63946;
-    /* Red for alerts */
 }
 
 .report a:hover {
