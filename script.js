@@ -28,11 +28,10 @@ container.innerHTML = ""; // Clear previous cards
 data.forEach(item => {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.onclick = () => window.open(item.link, "_blank"); // Open link in new tab
 
 
     card.innerHTML = `
-        <img src="${item.image}" alt="${item.title}">
+        <a href="${item.link}" target="_blank"><img src="${item.image}" alt="${item.title}"></a>
         <div class="card-content">
             <h2>${item.title}</h2>
             <p>${item.text}</p>
