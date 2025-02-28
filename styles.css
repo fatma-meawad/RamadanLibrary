@@ -5,35 +5,13 @@ body {
     margin: 20px;
 }
 
-/* Category Filters */
-.categories {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.category {
-    background: #f1f1f1;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.category.active {
-    background: #007bff;
-    color: white;
-}
-
 /* Responsive Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Adjust dynamically */
     gap: 20px;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -41,54 +19,69 @@ body {
 .card {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: right;
     padding-bottom: 10px;
+    width: 420px;
+    /* More balanced width */
+    margin: auto;
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 150px;
+    /* Balanced image size */
     object-fit: cover;
 }
 
 .card-content {
-    padding: 15px;
+    padding: 10px;
 }
 
 .card h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin: 5px 0;
 }
 
 .card p {
-    font-size: 14px;
-    color: #666;
+    font-size: 13px;
+    color: #444;
+    /* Darker text for readability */
 }
 
+/* Footer with evenly spaced links */
 .card-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
+    /* Spread links evenly */
+    padding: 8px 12px;
+    /* Proper spacing */
     font-size: 14px;
-    color: #666;
+    border-top: 1px solid #ddd;
+    /* Subtle separator */
 }
 
-.card-footer .tag {
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
+.clickable {
     font-weight: bold;
 }
 
-.new {
-    background: #007bff;
-    color: white;
+.clickable a {
+    text-decoration: none;
+    color: #007bff;
+    transition: 0.3s;
 }
 
-.active {
-    background: #28a745;
-    color: white;
+.clickable a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.report a {
+    color: #e63946;
+    /* Red for alerts */
+}
+
+.report a:hover {
+    color: #d62828;
 }
